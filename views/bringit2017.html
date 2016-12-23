@@ -1,0 +1,79 @@
+<div class="container">
+    <div class="textintro">
+        <h1>#Broughts</h1>
+    </div>
+    <button class="btn btn-default" id="addSiteBtn" ng-click="showModal()">
+        <span>I got one to add</span><br>
+    </button>
+
+    <div id="filters">
+        <div id="search">
+            <input ng-model="query" placeholder="Search" autofocus>
+        </div>
+    </div>
+
+    <div class="row siteBoxes">
+        <div class="col-sm-6 boxpad" ng-repeat="(key, entry) in broughts | filter: query">
+            <div class="sitebox">
+                <div>{{ entry.enteredBy }}</div>
+                <div>{{ entry.siteName }}</div>
+                <div>{{ entry.dateBrought | date:'dd-MMM-yyyy' }}</div>
+                <div>{{ entry.comments }}</div>
+                <!--<div>{{ entry.image }}</div>-->
+                <div>{{ entry.enteredBy }}</div>
+                <img ng-src="{{ entry.image }}" style="width:100px;height:100px;"/>
+                <button class="btn btn-default" ng-click="deleteBrought(key)">
+                    <span>Delete</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="addBringIt" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header" style="padding:15px 10px;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4><span class="glyphicon glyphicon-new"></span> Upload your #BringIt</h4>
+                </div>
+                <div class="modal-body" style="padding:40px 10px;">
+                    <form class=" cf"
+                          name="myform"
+                          ng-submit="addBringIt()"
+                          novalidate>
+
+                        <div class="inputwrapper">
+                            <div class="form-group">
+                                <input type="text" class="form-control" ng-model="enteredBy" placeholder="Name please" required="true">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" ng-model="siteName" placeholder="Where were you?" required="true">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="date" name="dateBrought" class="form-control"
+                                       placeholder="When was it brought"
+                                       ng-model="dateBrought" min="2011-01-01" ng-required="true">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" name="comments" class="form-control"
+                                       placeholder="Tell us about it"
+                                       ng-model="comments" ng-required="true">
+                            </div>
+
+                            <div class="form-group text-center">
+                                <input type="file" class="block" id="image-input"/>
+                                <div id="image-display" style="margin-top: 20px;"></div>
+                            </div>
+                            <button type="submit" ng-disabled="myform.$invalid">Save</button>
+                        </div>
+                        <!--ng-disabled="myform.$invalid-->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- meetings cf -->

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>SH Account Knowledge</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,100,700,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/newStyle.css">
+
+
+    <!-- all of the required bootstrap sources -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+    <script src="js/lib/angular/angular.min.js"></script>
+    <script src="js/lib/angular/angular-route.min.js"></script>
+    <script src="js/lib/angular/angular-animate.min.js"></script>
+    <script src="js/notify.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
+
+
+    <script src="js/myApp.js"></script>
+    <script src="js/Controllers/registration.js"></script>
+    <script src="js/Controllers/sites.js"></script>
+
+
+    <script src="js/Services/athentication.js"></script>
+
+
+</head>
+<body>
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#/sites">#BringIT - MDT - APV - 2017</a>
+            <br>
+            <div class="navbar-brand" ng-show="currentUser" ng-controller="RegistrationController">
+                Upload your own, or view and be in awe of your colleagues showing how they #BringIt
+            </div>
+
+
+        </div>
+
+
+        <ul class="nav navbar-nav navbar-right">
+            <li><a ng-show="currentUser" ng-href="#/sites">How many times we brought it -
+                <span ng-show"bringitRef" class="badge">
+                {{ howManyBroughts }}
+                </span>
+            </a>
+
+        </ul>
+    </div>
+
+</nav>
+
+
+<div class="container">
+
+    <main class="" ng-view>
+
+        <!--everything lives in here-->
+    </main>
+</div>
+
+
+</body>
+
+
+<script>
+    $(document).ready(function () {
+        $("#manageUser").click(function () {
+            $("#manageUserModal").modal();
+        });
+        $("#managedUser").click(function () {
+            $("#manageUserModal").hide();
+        });
+
+
+    });
+</script>
+</html>

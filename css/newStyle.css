@@ -1,0 +1,160 @@
+.commentsBox {
+    overflow: scroll;
+ max-height: 400px; 
+
+}
+
+.details {
+    position: relative;
+}
+
+.rightside{
+    position:absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.comment {
+    border: 3px solid blue; 
+    position: relative;
+}
+
+.commentsContainer {
+    position: relative;
+    height: 500px;
+}
+
+.newComment {
+    position: absolute;
+    height: 100px;
+    width: 80%;
+    bottom: 0px;
+    background: grey; 
+}
+
+
+
+
+.summaryText {
+  overflow: scroll;
+position: absolute;
+    text-align: left;
+ 
+}
+
+.editOptions {
+    position: absolute;
+    bottom: 5px;
+}
+
+.siteHealth .siteStatus {
+    padding: 20px;
+    border-bottom: solid
+        
+}
+
+.siteHealth .siteStatus.good::after { 
+ content: ''; display: block; height: 40px; width: 80px; background: no-repeat 0px 0px;
+    background: green;
+    background-size: 40px 40px; position: absolute; right: 35px; top: 15px;
+}
+
+
+.siteHealth .siteStatus.bad::after { 
+ content: ''; display: block; height: 40px; width: 80px; background: no-repeat 0px 0px;
+    background: red;
+    background-size: 40px 40px; position: absolute; right: 35px; top: 15px;
+}
+
+.sitebox{
+    border: solid;
+}
+
+.siteStatussummary.bad{
+    background: red;
+}
+
+.siteStatussummary.good{
+    background: green;
+}
+
+.siteBoxes{
+    padding-top: 10px;
+}
+
+
+
+
+
+.contactsContainer {
+    overflow: scroll;
+ max-height: 300px; 
+}
+
+
+  /* THE DIV TO TABLE TECHNIQUE */
+
+  #tablecontainer {
+    width: 100%;
+    padding:0;
+    display: table;
+    border: 1px solid black;
+      text-align: left;
+    }
+
+  #row  {
+    display: table-row;
+    }
+
+  #left {
+    width:15%;
+    padding:0;
+    background: #EEF;
+    display: table-cell;
+    }
+
+  #right {
+      padding: 5px;
+    width:15%;
+    background:#FEE;
+    display: table-cell;
+    }
+
+  #middle {
+    padding: 5px;
+    width: 15%;
+    display: table-cell;
+    }
+#farr {
+    padding: 5px;
+    width: 20%;
+    display: table-cell;
+    }
+
+
+
+.boxpad {
+    padding-bottom: 30px;
+}
+
+.textHead {
+    text-align: center;
+}
+
+.scrollBox {
+      overflow-x:inherit;
+ min-height: 100px; 
+}
+
+#filters {
+    padding-top: 10px;
+}
+
+.logout {
+ display: block;
+  height: 50px;
+  padding: 15px 15px;
+  font-size: 18px;
+  line-height: 20px;
+}
+

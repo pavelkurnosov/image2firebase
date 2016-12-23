@@ -1,0 +1,29 @@
+<section class="card login">
+
+    <div class="container">
+        <h2>Enter Credentials... </h2>
+        <form class="form-inline" role="form" name="myform"
+              ng-submit="login()"
+              novalidate>
+            <div class="form-group">
+                <input type="email" class="form-control" name="email" placeholder="Email" ng-model="user.email" ng-required="true">
+                <p class="error validationerror" ng-show="myform.email.$invalid && myform.email.$touched">
+                    That is not a valid email
+                </p>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" name="password" placeholder="Password" ng-model="user.password" ng-required="true">
+                <p class="error validationerror" ng-show="myform.password.$invalid && myform.password.$touched">
+                    Valid password needed
+                </p>
+            </div>
+
+            <button type="submit" class="btn btn-default" ng-disabled="myform.$invalid">Login</button>
+
+        </form>
+        <p>{{message}}</p>
+    </div>
+
+    <a href="#/resetPassword">Reset Password</a>
+
+</section>
